@@ -22,14 +22,16 @@ var specialCharacters = [
   '~',
   '-',
   '_',
-  '.'
-];
+  '.',
+// ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+// var numericCharacters = [
+  '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+// ];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+// var lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -55,11 +57,11 @@ var lowerCasedCharacters = [
   'w',
   'x',
   'y',
-  'z'
-];
+  'z',
+// ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+// var upperCasedCharacters = [
   'A',
   'B',
   'C',
@@ -102,7 +104,7 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
-if (specialCharacters = "Y")
+if (specialCharacters = true)
   function getRandom(arr) {
   console.log(arr[(Math.floor(math.random()*specialCharacters.length))]);
 }
