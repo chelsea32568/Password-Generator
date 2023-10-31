@@ -101,16 +101,12 @@ function getPasswordOptions() {
   var specialCharacters= prompt("Would you like your password to include special characters? (Y/N)")
 }
 
-
-
-
 // Function for getting a random element from an array
-function getRandom(specialCharacters) {
-
-  return specialCharacters [Math.floor(math.random()*specialCharacters.length)];
-  
+if (specialCharacters = "Y")
+  function getRandom(arr) {
+  console.log(arr[(Math.floor(math.random()*specialCharacters.length))]);
 }
-console.log(getRandom(specialCharacters));
+
 
 // Function to generate password with user input
 function generatePassword() {
