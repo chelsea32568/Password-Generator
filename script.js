@@ -95,8 +95,8 @@ function getPasswordOptions() {
   alert("Your password does not meet the critia.");
   var userLength = prompt("Password must be between 8 and 128 characters in length.");
   }
-  var lowerCase = prompt("Would you like your password to include Lowercase letters? (Y/N)")
-  var upperCase = prompt("Would you like your password to include Uppercase letters? (Y/N)")
+  var lowerCase = prompt("Would you like your password to include lowercase letters? (Y/N)")
+  var upperCase = prompt("Would you like your password to include uppercase letters? (Y/N)")
   var numeric = prompt("Would you like your password to include numbers? (Y/N)")
   var specialCharacters= prompt("Would you like your password to include special characters? (Y/N)")
 }
@@ -105,9 +105,12 @@ function getPasswordOptions() {
 
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+function getRandom(specialCharacters) {
 
+  return specialCharacters [Math.floor(math.random()*specialCharacters.length)];
+  
 }
+console.log(getRandom(specialCharacters));
 
 // Function to generate password with user input
 function generatePassword() {
