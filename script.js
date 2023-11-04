@@ -93,6 +93,10 @@ var specialCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   var userLength = prompt("How many chacters would you like your password to be? (type a number between 8-128)");
+    if (userLength < 8 || userLength > 128) {
+      alert("Passwords must be between 8-128 characters long. Please try again.");
+      var userLength = prompt("How many chacters would you like your password to be? (type a number between 8-128)");
+    }
   console.log(userLength);
   var lowerCase = confirm("Your password will include lowercase letters")
   console.log(lowerCase);
@@ -103,11 +107,6 @@ function getPasswordOptions() {
   var specialCharacters= confirm("Your password will include special characters")
   console.log(specialCharacters);
   } 
-  // if (userLength < 8 || userLength > 128) {
-  // alert("Your password does not meet the critia.");
-  // var userLength = prompt("Password must be between 8 and 128 characters in length.");
-
-// }
 
 // Function for getting a random element from an array
 
