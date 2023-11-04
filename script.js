@@ -123,34 +123,34 @@ function specialChar() {
 
 // Function to generate password with user input
 function generatePassword() {
-
-
   var pool = [];
 
-  //DOES NOT WORK IF TYPE IN WORD. HOW CAN I MAKE SURE ITS ONLY A NUMBER?
-  var userLength = prompt(
-    "How many chacters would you like your password to be? (type a number between 8-128)"
-  );
-  if (userLength < 8 || userLength > 128) {
-    alert("Passwords must be between 8-128 characters long. Please try again.");
-    //ALLOWS ME TO PUT NUMBER IN TWICE
-    var userLength = prompt(
+  var userLength = parseInt(
+    prompt(
       "How many chacters would you like your password to be? (type a number between 8-128)"
-    );
+    )
+  );
+  if (Number.isNaN(userLength)) {
+    alert("Password length must be provided as a number. Please try again.");
+    return null;
   }
-  console.log(userLength);
+  if (userLength < 8 || userLength > 128) {
+    alert("Password length must be provided as a number. Please try again.");
+    return null;
+  }
+
   var lowerCase = confirm("Your password will include lowercase letters");
-  if (lowerCase === true) {
+  if (lowerCase) {
     pool = pool.concat(lowerCaseCharacters);
   }
 
   var upperCase = confirm("Your password will include uppercase letters");
-  if (upperCase === true) {
+  if (upperCase) {
     pool = pool.concat(upperCaseCharacters);
   }
 
   var numeric = confirm("Your password will include numbers");
-  if (numeric === true) {
+  if (numeric) {
     pool = pool.concat(numericCharacters);
   }
 
@@ -160,7 +160,6 @@ function generatePassword() {
   }
 
   //HOW DO I MAKE SURE ITS ONE FROM EACH GROUP
-  // FOR (VARIABLE, CONDITION, AFTER) {LOGIC}
   var passwordToReturn = "";
   for (i = 0; i < userLength; i++) {
     passwordToReturn =
@@ -169,12 +168,6 @@ function generatePassword() {
 
   console.log(passwordToReturn);
   return passwordToReturn;
-
-  // function specialChar () {
-  //   console.log(specialCharacters[(Math.floor(Math.random() * specialCharacters.length))]);
-  //   var something = specialCharacters[(Math.floor(Math.random() * specialCharacters.length))]
-  // }
-
 }
 
 // Get references to the #generate element
