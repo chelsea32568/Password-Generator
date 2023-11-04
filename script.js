@@ -131,9 +131,9 @@ specialChar()
 
 // Function to generate password with user input
 function generatePassword() {
-  var password = "";  
   var options = getPasswordOptions();
-
+  var length = userLength.value;
+  console.log(length);
 }
 
 // Get references to the #generate element
@@ -149,3 +149,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+  
