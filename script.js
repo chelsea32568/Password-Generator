@@ -96,24 +96,38 @@ function getPasswordOptions() {
   if (userLength < 8 || userLength > 128) {
   alert("Your password does not meet the critia.");
   var userLength = prompt("Password must be between 8 and 128 characters in length.");
-  }
   var lowerCase = prompt("Would you like your password to include lowercase letters? (Y/N)")
-  var upperCase = prompt("Would you like your password to include uppercase letters? (Y/N)")
+    var upperCase = prompt("Would you like your password to include uppercase letters? (Y/N)")
   var numeric = prompt("Would you like your password to include numbers? (Y/N)")
   var specialCharacters= prompt("Would you like your password to include special characters? (Y/N)")
+  }
 }
 
 // Function for getting a random element from an array
-if (specialCharacters = true)
-  function getRandom(arr) {
-  console.log(arr[(Math.floor(math.random()*specialCharacters.length))]);
-}
+// if(specialCharacters == false )
+
+// if (specialCharacters == true)
+//   function getRandom(arr) {
+//   console.log(arr[(Math.floor(math.random()*specialCharacters.length))]);
+// }
 
 
 // Function to generate password with user input
 function generatePassword() {
+  var password = "";
   var options = getPasswordOptions();
+
+  for (var i = 1; i <=8; i++) {
+    var characters = Math.floor(Math.random()
+    * options.length + 1);
+
+    password += options.charAt(characters)
+  }
+
+  return password;
 }
+
+console.log(generatePassword());
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
